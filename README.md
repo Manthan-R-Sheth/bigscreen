@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Effective Android Architecture
 ==============================
 
@@ -12,3 +13,6 @@ Roadmap for lectures
 - [ ] Implement Model View Presenter pattern
 - [ ] Separate data and domain layer from ui layer
 - [ ] Dependency injection with dagger
+=======
+# movies_mvp
+>>>>>>> c440ed5a5a118cc53d75f79ff5ab907a5505d693
