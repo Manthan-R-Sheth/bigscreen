@@ -1,4 +1,4 @@
-package in.co.mdg.mvpdemo;
+package in.co.mdg.mvpdemo.Activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import in.co.mdg.mvpdemo.R;
 
 
 public class ListMovies extends ActionBarActivity {

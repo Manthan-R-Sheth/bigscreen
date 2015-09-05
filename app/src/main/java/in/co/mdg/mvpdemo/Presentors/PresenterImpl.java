@@ -1,7 +1,11 @@
-package in.co.mdg.mvpdemo;
+package in.co.mdg.mvpdemo.Presentors;
 
 import java.util.ArrayList;
-import java.util.Objects;
+
+import in.co.mdg.mvpdemo.Interactors.Interactor;
+import in.co.mdg.mvpdemo.Interactors.InteractorImpl;
+import in.co.mdg.mvpdemo.Views.MainView;
+import in.co.mdg.mvpdemo.Utils.OnRequestFinishedListener;
 
 /**
  * @author Akshay

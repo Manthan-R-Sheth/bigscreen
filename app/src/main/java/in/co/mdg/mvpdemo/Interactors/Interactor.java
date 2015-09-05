@@ -1,4 +1,6 @@
-package in.co.mdg.mvpdemo;
+package in.co.mdg.mvpdemo.Interactors;
+
+import in.co.mdg.mvpdemo.Utils.OnRequestFinishedListener;
 
 /**
  * @author Akshay

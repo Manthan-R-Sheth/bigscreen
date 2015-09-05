@@ -1,4 +1,4 @@
-package in.co.mdg.mvpdemo;
+package in.co.mdg.mvpdemo.Utils;
 
 import java.util.ArrayList;
 
