@@ -1,21 +1,25 @@
 package in.co.mdg.mvpdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 
     TextView textView;
     ProgressBar progressBar;
     Button button;
-
     Presenter presenter;
 
     @Override
@@ -25,10 +29,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         presenter = new PresenterImpl(this);
 
-        textView = (TextView) findViewById(R.id.tv_hello_world);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         button = (Button) findViewById(R.id.btn_request);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,8 +72,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public void setSuccessLayout() {
-        Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+    public void setSuccessLayout(ArrayList<String> movieslist) {
+
+        Intent i=new Intent(this,ListMovies.class);
+        i.putStringArrayListExtra("Movies",movieslist);
+        startActivity(i);
+//        Toast.makeText(MainActivity.this, read, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

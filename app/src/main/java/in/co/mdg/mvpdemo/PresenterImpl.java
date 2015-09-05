@@ -1,5 +1,8 @@
 package in.co.mdg.mvpdemo;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 /**
  * @author Akshay
  * @version 1.0.0
@@ -22,9 +25,9 @@ public class PresenterImpl implements Presenter, OnRequestFinishedListener {
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccess(ArrayList<String> movieslist){
         mainView.hideProgressbar();
-        mainView.setSuccessLayout();
+        mainView.setSuccessLayout(movieslist);
     }
 
     @Override

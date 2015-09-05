@@ -1,5 +1,7 @@
 package in.co.mdg.mvpdemo;
 
+import java.util.ArrayList;
+
 /**
  * @author Akshay
  * @version 1.0.0
@@ -11,7 +13,7 @@ public interface MainView {
     
     void hideProgressbar();
 
-    void setSuccessLayout();
+    void setSuccessLayout(ArrayList<String> movieslist);
 
     void setErrorLayout();
 }

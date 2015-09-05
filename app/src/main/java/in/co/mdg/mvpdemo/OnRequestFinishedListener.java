@@ -1,5 +1,7 @@
 package in.co.mdg.mvpdemo;
 
+import java.util.ArrayList;
+
 /**
  * @author Akshay
  * @version 1.0.0
@@ -7,7 +9,7 @@ package in.co.mdg.mvpdemo;
  */
 public interface OnRequestFinishedListener {
 
-    void onSuccess();
+    void onSuccess(ArrayList<String> movieslist);
 
     void onError();
 }
