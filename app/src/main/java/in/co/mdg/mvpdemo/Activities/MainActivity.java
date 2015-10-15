@@ -25,7 +25,7 @@ import in.co.mdg.mvpdemo.Presentors.PresenterImpl;
 import in.co.mdg.mvpdemo.R;
 import in.co.mdg.mvpdemo.Views.MainView;
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity{
 
     TextView textView;
     ProgressBar progressBar;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter = new PresenterImpl(this);
+
         c=this;
 
 
@@ -122,30 +122,5 @@ public class MainActivity extends AppCompatActivity implements MainView {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }}
 
-    @Override
-    public void showProgressbar() {
-        progressBar.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideProgressbar() {
-        progressBar.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void setSuccessLayout(ArrayList<String> movieslist) {
-
-        Intent i = new Intent(this, ListMovies.class);
-        i.putStringArrayListExtra("Movies", movieslist);
-        startActivity(i);
-//        Toast.makeText(MainActivity.this, read, Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void setErrorLayout() {
-        Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
-    }
-}
