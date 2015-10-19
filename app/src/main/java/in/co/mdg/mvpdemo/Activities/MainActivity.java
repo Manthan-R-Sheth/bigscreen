@@ -1,7 +1,6 @@
 package in.co.mdg.mvpdemo.Activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -11,21 +10,18 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import in.co.mdg.mvpdemo.Fragments.ListMovies;
 import in.co.mdg.mvpdemo.Fragments.TopRatedMoviesFragment;
 import in.co.mdg.mvpdemo.Presentors.Presenter;
-import in.co.mdg.mvpdemo.Presentors.PresenterImpl;
 import in.co.mdg.mvpdemo.R;
-import in.co.mdg.mvpdemo.Views.MainView;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements TopRatedMoviesFragment.ButtonSelectedListener{
 
     TextView textView;
     ProgressBar progressBar;
@@ -122,5 +118,19 @@ public class MainActivity extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
-    }}
+    }
+
+
+
+    @Override
+    public void onSelected(ArrayList<String> movies) {
+        ListMovies listMovies=new ListMovies();
+        Bundle b=new Bundle();
+        b.putStringArrayList("movies",movies);
+        listMovies.setArguments(b);
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.containerView,listMovies).commit();
+    }
+}
 

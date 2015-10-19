@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.ListMovies"
+            android:name=".Fragments.ListMovies"
             android:label="@string/title_activity_list_movies" >
         </activity>
     </application>
