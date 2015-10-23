@@ -91,7 +91,7 @@ public class RequestCall extends AsyncTask<String,Void,ArrayList<String>>{
             }
         } catch (Exception e) {
             if (e instanceof FileNotFoundException) {
-                Log.e("Error1", e.toString());
+                Log.e("Error1 detected", e.toString());
 
             } else Log.e("deo", e.toString());
         }
